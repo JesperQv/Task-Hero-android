@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.notely_android;
+package com.jesperqvarfordt.notely;
 
 import org.junit.Test;
 
