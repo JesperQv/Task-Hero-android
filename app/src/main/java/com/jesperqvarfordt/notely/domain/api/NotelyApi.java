@@ -1,6 +1,7 @@
 package com.jesperqvarfordt.notely.domain.api;
 
 import com.jesperqvarfordt.notely.domain.authentication.models.LoginRequest;
+import com.jesperqvarfordt.notely.domain.authentication.models.LoginResponse;
 import com.jesperqvarfordt.notely.domain.authentication.models.User;
 
 import io.reactivex.Observable;
@@ -12,7 +13,7 @@ public interface NotelyApi {
 
     @POST("api/authentication/login")
     @Headers({"Content-Type: application/json"})
-    Observable<User> login(@Body LoginRequest loginRequest);
+    Observable<LoginResponse> login(@Body LoginRequest loginRequest);
 
     @POST("api/authentication/register")
     @Headers({"Content-Type: application/json"})

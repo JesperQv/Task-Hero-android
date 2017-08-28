@@ -2,10 +2,12 @@ package com.jesperqvarfordt.notely.login;
 
 import android.text.TextUtils;
 
+import com.jesperqvarfordt.notely.domain.authentication.models.LoginResponse;
 import com.jesperqvarfordt.notely.domain.authentication.models.User;
 import com.jesperqvarfordt.notely.domain.authentication.services.AuthenticationService;
 
 import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
@@ -41,11 +43,11 @@ public class LoginPresenter implements LoginContract.Presenter {
     public void loginButtonClicked(String username, String password) {
         view.hideKeyboard();
         view.clearErrors();
-        if(TextUtils.isEmpty(username)) {
+        if (TextUtils.isEmpty(username)) {
             view.showNoUsernameError();
             return;
         }
-        if(TextUtils.isEmpty(password)) {
+        if (TextUtils.isEmpty(password)) {
             view.showNoPasswordError();
             return;
         }
@@ -54,11 +56,11 @@ public class LoginPresenter implements LoginContract.Presenter {
         Disposable disposable = authService.login(username, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<User>() {
+                .subscribe(new Consumer<LoginResponse>() {
                     @Override
-                    public void accept(@NonNull User user) throws Exception {
+                    public void accept(@NonNull LoginResponse response) throws Exception {
                         view.hideLoading();
-                        view.showHomeActivity(user);
+                        view.showHomeActivity(response.getUser());
                     }
                 }, new Consumer<Throwable>() {
                     @Override

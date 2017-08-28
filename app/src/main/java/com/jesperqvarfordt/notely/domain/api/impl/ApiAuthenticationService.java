@@ -3,13 +3,11 @@ package com.jesperqvarfordt.notely.domain.api.impl;
 import com.jesperqvarfordt.notely.domain.api.Retrofit;
 import com.jesperqvarfordt.notely.domain.api.base.ApiService;
 import com.jesperqvarfordt.notely.domain.authentication.models.LoginRequest;
+import com.jesperqvarfordt.notely.domain.authentication.models.LoginResponse;
 import com.jesperqvarfordt.notely.domain.authentication.models.User;
 import com.jesperqvarfordt.notely.domain.authentication.services.AuthenticationService;
 
 import io.reactivex.Observable;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 
 
 public class ApiAuthenticationService extends ApiService implements AuthenticationService {
@@ -19,7 +17,7 @@ public class ApiAuthenticationService extends ApiService implements Authenticati
     }
 
     @Override
-    public Observable<User> login(String username, String password) {
+    public Observable<LoginResponse> login(String username, String password) {
         LoginRequest loginRequest = new LoginRequest(username, password);
         return api.login(loginRequest);
     }
