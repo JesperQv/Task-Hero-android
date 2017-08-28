@@ -1,8 +1,11 @@
 package com.jesperqvarfordt.notely.domain.authentication.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class User implements Parcelable {
 
 
     @SerializedName("username")
@@ -64,6 +67,10 @@ public class User {
         this.password = password;
     }
 
+    public String getFullName() {
+        return firstname + " " + lastname;
+    }
+
     @Override
     public String toString() {
         return "username: " + username + "\n" +
@@ -71,4 +78,38 @@ public class User {
                 "lastname:" + lastname + "\n" +
                 "email: " + email + "\n";
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.username);
+        dest.writeString(this.firstname);
+        dest.writeString(this.lastname);
+        dest.writeString(this.email);
+        dest.writeString(this.password);
+    }
+
+    protected User(Parcel in) {
+        this.username = in.readString();
+        this.firstname = in.readString();
+        this.lastname = in.readString();
+        this.email = in.readString();
+        this.password = in.readString();
+    }
+
+    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel source) {
+            return new User(source);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 }

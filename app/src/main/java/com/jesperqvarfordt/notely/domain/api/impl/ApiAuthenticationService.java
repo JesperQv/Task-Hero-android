@@ -7,6 +7,9 @@ import com.jesperqvarfordt.notely.domain.authentication.models.User;
 import com.jesperqvarfordt.notely.domain.authentication.services.AuthenticationService;
 
 import io.reactivex.Observable;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 
 
 public class ApiAuthenticationService extends ApiService implements AuthenticationService {

@@ -8,11 +8,23 @@ public interface LoginContract {
 
     interface View extends BaseView<Presenter> {
 
-        void showSuccess(User user);
+        void showLoading();
 
-        void showRegistered();
+        void hideLoading();
 
-        void showError();
+        void showHomeActivity(User user);
+
+        void showRegistrationActivity();
+
+        void showWrongCredentialsError();
+
+        void showNoUsernameError();
+
+        void showNoPasswordError();
+
+        void clearErrors();
+
+        void hideKeyboard();
 
     }
 
@@ -20,7 +32,7 @@ public interface LoginContract {
 
         void loginButtonClicked(String username, String password);
 
-        void registerButtonClicked(String username, String password);
+        void registerButtonClicked();
 
     }
 }
