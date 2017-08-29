@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.notely_android;
+package com.jesperqvarfordt.taskhero;
 
 import org.junit.Test;
 

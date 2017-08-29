@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.notely_android;
+package com.jesperqvarfordt.taskhero;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
