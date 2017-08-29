@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jesperqvarfordt.notely">
+    package="com.jesperqvarfordt.taskhero">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:name=".NotelyApplication"
+        android:name="com.jesperqvarfordt.taskhero.TaskHeroApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.jesperqvarfordt.notely.login.LoginActivity">
+        <activity android:name="com.jesperqvarfordt.taskhero.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.jesperqvarfordt.notely.registration.RegistrationActivity" />
-        <activity android:name="com.jesperqvarfordt.notely.home.HomeActivity" />
+        <activity android:name="com.jesperqvarfordt.taskhero.registration.RegistrationActivity" />
+        <activity android:name="com.jesperqvarfordt.taskhero.home.HomeActivity" />
     </application>
 
 </manifest>
