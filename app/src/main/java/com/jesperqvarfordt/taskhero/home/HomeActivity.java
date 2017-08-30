@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.jesperqvarfordt.taskhero.R;
 import com.jesperqvarfordt.taskhero.base.BaseActivity;
-import com.jesperqvarfordt.taskhero.domain.authentication.models.User;
+import com.jesperqvarfordt.taskhero.domain.models.User;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

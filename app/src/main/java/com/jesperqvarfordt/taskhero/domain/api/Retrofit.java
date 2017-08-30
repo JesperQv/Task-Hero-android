@@ -9,13 +9,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retrofit {
 
-    private NotelyApi apiClient;
+    private TaskHeroApi apiClient;
 
     public Retrofit() {
         apiClient = createApiClient();
     }
 
-    private NotelyApi createApiClient() {
+    private TaskHeroApi createApiClient() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
@@ -26,10 +26,10 @@ public class Retrofit {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
                 .build();
-        return retrofit.create(NotelyApi.class);
+        return retrofit.create(TaskHeroApi.class);
     }
 
-    public NotelyApi getClient() {
+    public TaskHeroApi getClient() {
         return apiClient;
     }
 

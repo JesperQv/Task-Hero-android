@@ -2,7 +2,7 @@ package com.jesperqvarfordt.taskhero.login;
 
 import com.jesperqvarfordt.taskhero.base.BasePresenter;
 import com.jesperqvarfordt.taskhero.base.BaseView;
-import com.jesperqvarfordt.taskhero.domain.authentication.models.User;
+import com.jesperqvarfordt.taskhero.domain.models.User;
 
 public interface LoginContract {
 

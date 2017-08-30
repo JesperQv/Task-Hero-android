@@ -2,6 +2,8 @@ package com.jesperqvarfordt.taskhero.di;
 
 import com.jesperqvarfordt.taskhero.TaskHeroApplication;
 import com.jesperqvarfordt.taskhero.domain.api.Retrofit;
+import com.jesperqvarfordt.taskhero.domain.api.impl.SharedPrefStorage;
+import com.jesperqvarfordt.taskhero.domain.storage.LocalStorage;
 
 import javax.inject.Singleton;
 
@@ -19,13 +21,20 @@ public class AppModule {
 
     @Provides
     @Singleton
-    public TaskHeroApplication provideApplication() {
+    TaskHeroApplication provideApplication() {
         return application;
     }
 
     @Provides
     @Singleton
-    public Retrofit provideRetrofit() {
+    Retrofit provideRetrofit() {
         return new Retrofit();
     }
+
+    @Provides
+    @Singleton
+    LocalStorage provideLocalStorage() {
+        return new SharedPrefStorage(application);
+    }
+
 }

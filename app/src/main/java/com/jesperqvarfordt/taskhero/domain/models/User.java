@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.taskhero.domain.authentication.models;
+package com.jesperqvarfordt.taskhero.domain.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

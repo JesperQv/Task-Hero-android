@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.jesperqvarfordt.taskhero.R;
 import com.jesperqvarfordt.taskhero.base.BaseActivity;
-import com.jesperqvarfordt.taskhero.domain.authentication.models.User;
+import com.jesperqvarfordt.taskhero.domain.models.User;
 import com.jesperqvarfordt.taskhero.home.HomeActivity;
 import com.jesperqvarfordt.taskhero.login.di.DaggerLoginComponent;
 import com.jesperqvarfordt.taskhero.login.di.LoginModule;
@@ -46,6 +46,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 .loginModule(new LoginModule(this))
                 .build()
                 .inject(this);
+
     }
 
     @OnClick(R.id.login_button)
