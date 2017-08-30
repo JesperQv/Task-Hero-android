@@ -1,7 +1,7 @@
 package com.jesperqvarfordt.taskhero.login.di;
 
 import com.jesperqvarfordt.taskhero.di.ActivityScope;
-import com.jesperqvarfordt.taskhero.domain.authentication.services.AuthenticationService;
+import com.jesperqvarfordt.taskhero.domain.authentication.AuthenticationService;
 import com.jesperqvarfordt.taskhero.login.LoginContract;
 import com.jesperqvarfordt.taskhero.login.LoginPresenter;
 

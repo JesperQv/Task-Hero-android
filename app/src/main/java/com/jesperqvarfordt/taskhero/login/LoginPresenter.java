@@ -2,8 +2,8 @@ package com.jesperqvarfordt.taskhero.login;
 
 import android.text.TextUtils;
 
-import com.jesperqvarfordt.taskhero.domain.authentication.models.LoginResponse;
-import com.jesperqvarfordt.taskhero.domain.authentication.services.AuthenticationService;
+import com.jesperqvarfordt.taskhero.domain.models.LoginResponse;
+import com.jesperqvarfordt.taskhero.domain.authentication.AuthenticationService;
 
 import javax.inject.Inject;
 
@@ -21,7 +21,8 @@ public class LoginPresenter implements LoginContract.Presenter {
     private CompositeDisposable disposables;
 
     @Inject
-    public LoginPresenter(LoginContract.View view, AuthenticationService authService) {
+    public LoginPresenter(LoginContract.View view,
+                          AuthenticationService authService) {
         this.view = view;
         this.authService = authService;
         disposables = new CompositeDisposable();

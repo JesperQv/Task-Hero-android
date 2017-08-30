@@ -2,7 +2,7 @@ package com.jesperqvarfordt.taskhero.di;
 
 import com.jesperqvarfordt.taskhero.TaskHeroApplication;
 import com.jesperqvarfordt.taskhero.domain.api.Retrofit;
-import com.jesperqvarfordt.taskhero.domain.authentication.services.AuthenticationService;
+import com.jesperqvarfordt.taskhero.domain.authentication.AuthenticationService;
 
 import javax.inject.Singleton;
 
