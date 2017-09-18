@@ -1,9 +1,9 @@
-package com.jesperqvarfordt.taskhero.registration.di;
+package com.jesperqvarfordt.taskhero.presentation.registration.di;
 
 import com.jesperqvarfordt.taskhero.di.ActivityScope;
 import com.jesperqvarfordt.taskhero.domain.authentication.AuthenticationService;
-import com.jesperqvarfordt.taskhero.registration.RegistrationContract;
-import com.jesperqvarfordt.taskhero.registration.RegistrationPresenter;
+import com.jesperqvarfordt.taskhero.presentation.registration.RegistrationContract;
+import com.jesperqvarfordt.taskhero.presentation.registration.RegistrationPresenter;
 
 import dagger.Module;
 import dagger.Provides;

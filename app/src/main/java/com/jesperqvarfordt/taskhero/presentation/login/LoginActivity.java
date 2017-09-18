@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.taskhero.login;
+package com.jesperqvarfordt.taskhero.presentation.login;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.jesperqvarfordt.taskhero.R;
-import com.jesperqvarfordt.taskhero.base.BaseActivity;
+import com.jesperqvarfordt.taskhero.presentation.base.BaseActivity;
 import com.jesperqvarfordt.taskhero.domain.models.User;
-import com.jesperqvarfordt.taskhero.home.HomeActivity;
-import com.jesperqvarfordt.taskhero.login.di.DaggerLoginComponent;
-import com.jesperqvarfordt.taskhero.login.di.LoginModule;
-import com.jesperqvarfordt.taskhero.registration.RegistrationActivity;
+import com.jesperqvarfordt.taskhero.presentation.home.HomeActivity;
+import com.jesperqvarfordt.taskhero.presentation.login.di.DaggerLoginComponent;
+import com.jesperqvarfordt.taskhero.presentation.login.di.LoginModule;
+import com.jesperqvarfordt.taskhero.presentation.registration.RegistrationActivity;
 
 import javax.inject.Inject;
 
@@ -23,9 +23,9 @@ import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginContract.View {
 
-    @BindView(R.id.username_edittext)
+    @BindView(R.id.username_edit_text)
     TextInputEditText username;
-    @BindView(R.id.password_edittext)
+    @BindView(R.id.password_edit_text)
     TextInputEditText password;
     @BindView(R.id.content_container)
     View contentContainer;

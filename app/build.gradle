@@ -11,7 +11,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "BASEURL", "\"http://213.89.139.5:3000/\""
+        buildConfigField "String", "BASEURL", "\"http://188.226.132.237:3000/\""
     }
     buildTypes {
         release {
@@ -45,7 +45,7 @@ dependencies {
     compile 'io.realm:realm-android:0.82.1'
 
     // Lottie
-    compile 'com.airbnb.android:lottie:1.5.3'
+    compile 'com.airbnb.android:lottie:2.2.0'
 
     // Butterknife
     compile 'com.jakewharton:butterknife:8.5.1'

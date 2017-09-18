@@ -1,7 +1,7 @@
-package com.jesperqvarfordt.taskhero.login;
+package com.jesperqvarfordt.taskhero.presentation.login;
 
-import com.jesperqvarfordt.taskhero.base.BasePresenter;
-import com.jesperqvarfordt.taskhero.base.BaseView;
+import com.jesperqvarfordt.taskhero.presentation.base.BasePresenter;
+import com.jesperqvarfordt.taskhero.presentation.base.BaseView;
 import com.jesperqvarfordt.taskhero.domain.models.User;
 
 public interface LoginContract {
@@ -33,6 +33,8 @@ public interface LoginContract {
         void loginButtonClicked(String username, String password);
 
         void registerButtonClicked();
+
+        void tryRefresh();
 
     }
 }

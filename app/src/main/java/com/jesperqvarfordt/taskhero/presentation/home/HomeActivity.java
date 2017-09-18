@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.taskhero.home;
+package com.jesperqvarfordt.taskhero.presentation.home;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.jesperqvarfordt.taskhero.R;
-import com.jesperqvarfordt.taskhero.base.BaseActivity;
+import com.jesperqvarfordt.taskhero.presentation.base.BaseActivity;
 import com.jesperqvarfordt.taskhero.domain.models.User;
 
 import butterknife.BindView;

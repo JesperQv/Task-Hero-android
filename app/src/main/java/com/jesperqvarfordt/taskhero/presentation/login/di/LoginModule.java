@@ -1,9 +1,9 @@
-package com.jesperqvarfordt.taskhero.login.di;
+package com.jesperqvarfordt.taskhero.presentation.login.di;
 
 import com.jesperqvarfordt.taskhero.di.ActivityScope;
 import com.jesperqvarfordt.taskhero.domain.authentication.AuthenticationService;
-import com.jesperqvarfordt.taskhero.login.LoginContract;
-import com.jesperqvarfordt.taskhero.login.LoginPresenter;
+import com.jesperqvarfordt.taskhero.presentation.login.LoginContract;
+import com.jesperqvarfordt.taskhero.presentation.login.LoginPresenter;
 
 import dagger.Module;
 import dagger.Provides;

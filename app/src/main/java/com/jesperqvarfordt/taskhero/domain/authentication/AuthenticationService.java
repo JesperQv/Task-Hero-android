@@ -10,6 +10,8 @@ public interface AuthenticationService {
 
     Observable<LoginResponse> login(String username, String password);
 
+    Observable<LoginResponse> refresh();
+
     Observable<User> register(User user);
 
     void logout();

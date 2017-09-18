@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.taskhero.base;
+package com.jesperqvarfordt.taskhero.presentation.base;
 
 import android.app.Activity;
 

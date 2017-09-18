@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.taskhero.base;
+package com.jesperqvarfordt.taskhero.presentation.base;
 
 public interface BaseView<T extends BasePresenter> {
 

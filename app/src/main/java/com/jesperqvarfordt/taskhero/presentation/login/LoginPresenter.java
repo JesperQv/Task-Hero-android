@@ -1,4 +1,4 @@
-package com.jesperqvarfordt.taskhero.login;
+package com.jesperqvarfordt.taskhero.presentation.login;
 
 import android.text.TextUtils;
 
@@ -20,6 +20,8 @@ public class LoginPresenter implements LoginContract.Presenter {
     private AuthenticationService authService;
     private CompositeDisposable disposables;
 
+    private boolean triedRefresh = false;
+
     @Inject
     public LoginPresenter(LoginContract.View view,
                           AuthenticationService authService) {
@@ -31,6 +33,9 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void subscribe() {
         disposables.clear();
+        if (!triedRefresh) {
+            tryRefresh();
+        }
     }
 
     @Override
@@ -59,7 +64,6 @@ public class LoginPresenter implements LoginContract.Presenter {
                 .subscribe(new Consumer<LoginResponse>() {
                     @Override
                     public void accept(@NonNull LoginResponse response) throws Exception {
-                        view.hideLoading();
                         view.showHomeActivity(response.getUser());
                     }
                 }, new Consumer<Throwable>() {
@@ -75,6 +79,28 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void registerButtonClicked() {
         view.showRegistrationActivity();
+    }
+
+    @Override
+    public void tryRefresh() {
+        triedRefresh = true;
+        view.showLoading();
+
+        Disposable disposable = authService.refresh()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<LoginResponse>() {
+                    @Override
+                    public void accept(@NonNull LoginResponse loginResponse) throws Exception {
+                        view.showHomeActivity(loginResponse.getUser());
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(@NonNull Throwable throwable) throws Exception {
+                        view.hideLoading();
+                    }
+                });
+        disposables.add(disposable);
     }
 
 }

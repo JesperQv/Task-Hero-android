@@ -6,6 +6,7 @@ import com.jesperqvarfordt.taskhero.domain.authentication.AuthenticationService;
 import com.jesperqvarfordt.taskhero.domain.models.LoginRequest;
 import com.jesperqvarfordt.taskhero.domain.models.LoginResponse;
 import com.jesperqvarfordt.taskhero.domain.models.LogoutRequest;
+import com.jesperqvarfordt.taskhero.domain.models.RefreshRequest;
 import com.jesperqvarfordt.taskhero.domain.models.User;
 import com.jesperqvarfordt.taskhero.domain.storage.LocalStorage;
 
@@ -31,6 +32,21 @@ public class ApiAuthenticationService extends ApiService implements Authenticati
             public LoginResponse apply(@NonNull LoginResponse loginResponse) throws Exception {
                 localStorage.saveAccessToken(loginResponse.getAccessToken());
                 localStorage.saveRefreshToken(loginResponse.getRefreshToken());
+                return loginResponse;
+            }
+        });
+    }
+
+    @Override
+    public Observable<LoginResponse> refresh() {
+        String refreshToken = localStorage.getRefreshToken();
+        if (refreshToken == null) {
+            refreshToken = "";
+        }
+        return api.refresh(new RefreshRequest(refreshToken)).map(new Function<LoginResponse, LoginResponse>() {
+            @Override
+            public LoginResponse apply(@NonNull LoginResponse loginResponse) throws Exception {
+                localStorage.saveAccessToken(loginResponse.getAccessToken());
                 return loginResponse;
             }
         });
